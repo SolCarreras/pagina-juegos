@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/register.css">
+    <title>LOGO | REGISTER </title>
+
+</head>
+
+<body>
+    <a href="/" class="logo">Logo</a>
+    <main class="register-container">
+        <div class="box-form">
+            <form method="post" class="formulario-box" action="/user/register" enctype="multipart/form-data"
+                id="formulario">
+                <h3 class="w100">REGISTRATE</h3>
+                <!-- <section class="errores">
+                        <ul>
+
+                        </ul>
+                    </section>   -->
+                <h5 class="nombre-w100">TU NOMBRE</h5>
+                <div class="nombre-w100">
+                    <input type="text" name="first_name" id="first_name" placeholder="Nombre(s) *">
+                    <p class="is-invalid"></p>
+                </div>
+                <div class="apellido-w100">
+                    <input type="text" name="last_name" id="last_name" placeholder="Apellido *">
+                    <p class="is-invalid"></p>
+                </div>
+                <h5 class="w100">FECHA DE NACIMIENTO</h5>
+                <div class="date-w100">
+                    <input type="date" name="date" id="fecha">
+                    <p class="is-invalid"></p>
+                </div>
+                <h5 class="w100">SEXO</h5>
+                <div class="botones-sexos-w100">
+                <input  type="radio" name="sexos" id="hombre" value="hombre">
+                    <p class="is-invalid"></p>
+                    <label>Hombre</label>
+                    <input type="radio" name="sexos" id="mujer" value="mujer">
+                    <p class="is-invalid"></p>
+                    <label>Mujer</label>
+                    <input type="radio" name="sexos" id="otros" value="otros">
+                    <p class="is-invalid"></p>
+                    <label>Otros</label>
+                </div>
+                <div class="uploadImg-w100">
+                    <label for="image"><b>AGREGAR IMAGEN</b></label>
+                    <input  type="file" id="image" name="img">
+                    <p class="is-invalid"></p>
+                </div>
+                <h5 class="w100">DATOS DE ACCESO</h5>
+                <div class="email-w100">
+                    <input type="email" name="email" id="email" placeholder="Correo Electronico *">
+                    <p class="is-invalid"></p>
+                </div>
+                <div class="contraseña-w100">
+                    <input type="password" name="password" id="password" placeholder="Contraseña *">
+                    <p>Minimo 8 caracteres con una mayúscula, una minúscula, un caracter especial y un numero</p>
+                    <p class="errorValidacion"> </p>
+                </div>
+                <div class="terminos-w100">
+                    <input  type="checkbox" name="" id="">
+                    <p class="is-invalid"></p>
+                    <label class="w100">He leido y aceptos los terminos y la politica de privacidad</label>
+                </div>
+                <div class="boton-registrate-w100">
+                    <button type="submit">REGÍSTRATE<i class="fa-solid fa-arrow-right-long"></i></button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

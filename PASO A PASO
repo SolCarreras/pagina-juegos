@@ -1,0 +1,13 @@
+/* # si no tenés sequelize-cli:
+npm install --save-dev sequelize-cli
+
+# driver para SQL Server que usa Sequelize
+npm install tedious
+
+# si por alguna razón no tenés sequelize instalado:
+npm install sequelize */
+
+
+..PARA SABER LAS CARPERTAS QUE TENGO DENTRO DE MI PROYECTO 
+
+BSH ---  DIR

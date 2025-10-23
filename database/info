@@ -1,0 +1,30 @@
+// creo mi coneccion con la base de datos desde sequelize.
+//1) creo un nuevo file llamado .sequelizerc 
+//2) abro la terminal y sequelize init 
+//3) me crea una nueve carpeta llamada base de datos : config, mihgrations, models. seeders
+//4) agrego en la carpeta config: module.exports = {}
+//5) en data base: agrego el nombre de mi base de datos en xampp
+
+
+//) en la carpeta model voy agregar toda la informacion de mi base de datos nombre de la table con los datos que contiene
+  //npm i ejs
+  //npm i express-validator
+  //npm i cookie-parser
+  //npm i express-session
+
+
+
+  /*4️⃣ Resumen rápido
+
+✅ Primera vez / Datos nuevos
+
+node seeders/datos.js → inserta los juegos en SQL Server.
+
+node app.js → levanta el sitio y muestra los juegos.
+
+✅ Solo levantar la página
+
+node app.js*/
+
+
+//Si yo vuelvo a correr : seeders/Datos .js este se duplica en mi base de datos, este solo se debe correr una vez.

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito</title>
+  <link rel="stylesheet" href="/cart.css" />
+</head>
+
+<body class="header">
+  
+  <main class="cart-container">
+    <h2>Tu carrito</h2>
+
+    <% if (cart.length === 0) { %>
+      <p>Tu carrito está vacío 😢</p>
+    <% } else { %>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cart.forEach(item => { %>
+            <tr>
+              <td><img src="<%= item.image %>" alt="<%= item.name %>" width="50"></td>
+              <td><%= item.name %></td>
+              <td><%= item.quantity %></td>
+              <td>$<%= item.price %></td>
+              <td>$<%= (item.price * item.quantity).toFixed(2) %></td>
+              <td>
+                <form action="/cart/remove/<%= item.id %>" method="POST">
+                  <button type="submit">Eliminar</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <h3>Total: $<%= total.toFixed(2) %></h3>
+
+      <form action="/cart/clear" method="POST">
+        <button type="submit" class="btn-clear">Pagar y vaciar carrito</button>
+      </form>
+    <% } %>
+
+    <a href="/product" class="btn-return">Seguir comprando</a>
+  </main>
+</body>
+</html>

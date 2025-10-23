@@ -1,0 +1,160 @@
+/* --- RESET GENERAL --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* --- FONDO Y CUERPO --- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #181726;
+  background-image: url('/images/bg.jpg'); /* el mismo fondo que en carrito */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   padding: 60px 0; /* 👈 espacio arriba y abajo sin scroll */
+  overflow: hidden; /* evita que el padding cause desplazamiento */
+}
+
+/* --- LOGO --- */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  color: #f4b400; /* dorado */
+  font-size: 45px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* --- CONTENEDOR PRINCIPAL (CUADRO CENTRAL) --- */
+.box-form {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- TÍTULOS --- */
+.box-form h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f4b400;
+  padding-bottom: 10px;
+  color: #f4b400;
+  text-align: center;
+}
+
+h5 {
+  color: #f4b400;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+/* --- CAMPOS DE TEXTO Y ENTRADAS --- */
+.box-form input[type="text"],
+.box-form input[type="email"],
+.box-form input[type="password"],
+.box-form input[type="date"],
+.box-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* --- RADIO BUTTONS Y CHECKBOXES --- */
+.botones-sexos-w100 {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.botones-sexos-w100 label,
+.terminos-w100 label {
+  color: #fff;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+.terminos-w100 {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* --- SUBTEXTO Y VALIDACIONES --- */
+.contraseña-w100 p {
+  font-size: 0.8rem;
+  color: #bbb;
+  margin-top: 8px;
+}
+
+.is-invalid,
+.errorValidacion {
+  color: #f87171; /* rojo suave */
+  font-size: 0.9rem;
+}
+
+/* --- BOTÓN PRINCIPAL --- */
+button[type="submit"] {
+  margin-top: 15px;
+  background-color: #f4b400;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+button i {
+  margin-left: 8px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .box-form {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+}

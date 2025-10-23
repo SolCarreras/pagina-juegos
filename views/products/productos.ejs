@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Pagina</title>
+  </head>
+  <body>
+    <a href="/" class="logo">Logo</a>
+    <main class="product-container">
+      <h2>Todos los juegos</h2>
+      <div class="product-content">
+        <% games.forEach(game => { %>
+        <div class="product-1">
+          <img src="<%= game.image %>" alt="<%= game.name %>" />
+          <div class="product-txt">
+            <h3><%= game.name %></h3>
+            <p><%= game.description %></p>
+            <div class="price">
+              <p>$<%= game.price %></p>
+              <form action="/cart/add" method="POST">
+                <input type="hidden" name="id" value="<%= game.id %>" />
+                <input type="hidden" name="name" value="<%= game.name %>" />
+                <input type="hidden" name="price" value="<%= game.price %>" />
+                <input type="hidden" name="image" value="<%= game.image %>" />
+                <button type="submit" class="btn-2">Comprar</button>
+              </form>
+            </div>
+            <hr />
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </main>
+
+    <hr />
+  </body>
+</html>

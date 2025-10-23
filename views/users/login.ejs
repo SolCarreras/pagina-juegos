@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <title>Pagina</title>
+
+<body>
+    <a href="#" class="logo">Logo</a>
+    <main>
+
+        <div class="box-form">
+            <form action="/user/login" method="post" class="form-login" id="form-login">
+                <div class="box">
+                    <h3 class="ingreso">INICIAR SESIÓN</h3>
+                    <a class="registrate-con-w100" href="/user/password"><u>¿Has olvidado tu contraseña?</u></a>
+                    <br>
+                    <div class="inicio-sesion">
+
+                        <!-- <p style="color: red;">
+                            //< error %>/agrega %/
+                        </p> -->
+                        <input type="text" class="email" name="email" placeholder="Correo Electronico *" id="email">
+                        <p class="is-invalid"></p>
+
+                        <input class="password-login" type="password" name="password" placeholder="Contraseña *"
+                            id="password">
+                        <p class="is-invalid"></p>
+                    </div>
+
+                    <div class="terminos-w100">
+                        <input class="check" type="checkbox" name="remember" id="">
+                        <p class="is-invalid"></p>
+                        <label class="w100">Mantener la sesión abierta</label>
+                    </div>
+                    <div class="boton-registrate w100">
+                        <button class="login" type="submit">LOGIN<i class="fa-solid fa-arrow-right-long"></i></button>
+                    </div>
+                    <a class="registrate-w100" href="/user/register"><u>¿No tienes cuenta? REGISTRATE</u></a>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </main>
+ 
+
+</body>
+
+</html>
