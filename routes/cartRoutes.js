@@ -2,16 +2,15 @@ const express = require('express');
 const router = express.Router();
 const cartController = require('../controllers/cartController');
 
-// Mostrar carrito
-router.get('/', cartController.showCart);
+// Ver carrito
+router.get('/', cartController.viewCart);
 
-// Agregar producto
+// Agregar al carrito
+
 router.post('/add', cartController.addToCart);
 
-// Eliminar producto individual
-router.post('/remove/:id', cartController.removeItem);
 
-// Vaciar carrito (pagar)
-router.post('/clear', cartController.clearCart);
+// Eliminar uno
+router.post('/remove/:id', cartController.removeOne);
 
 module.exports = router;

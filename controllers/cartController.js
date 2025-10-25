@@ -1,46 +1,64 @@
-// controllers/cartController.js
+const db = require("../database/models");
 
-let cart = []; // Carrito temporal en memoria (luego podemos guardar en DB)
+module.exports = {
+  // Mostrar carrito
+ viewCart: async (req, res) => {
+  try {
+    const items = await db.Carrito.findAll({
+      include: [{ model: db.Game, as: "Games" }]
+    });
 
-const cartController = {
-  // Agregar un producto al carrito
-  addToCart: (req, res) => {
-    const { id, name, price, image } = req.body;
+    // Calcular total 💰
+    const total = items.reduce((acc, item) => {
+      return acc + (item.Games?.price || 0) * item.quantity;
+    }, 0);
 
-    const existingProduct = cart.find(item => item.id === parseInt(id));
-    if (existingProduct) {
-      existingProduct.quantity += 1;
-    } else {
-      cart.push({
-        id: parseInt(id),
-        name,
-        price: parseFloat(price),
-        image,
+    res.render("cart", { title: "Tu carrito", cart: items, total });
+  } catch (error) {
+    console.error("Error al cargar el carrito:", error);
+    res.status(500).send("Error al cargar el carrito.");
+  }
+},
+
+
+  // Agregar producto al carrito
+  addToCart: async (req, res) => {
+    try {
+      const { id } = req.body;
+        console.log("🎮 ID del juego recibido:", id); // 👈 importante
+
+
+      await db.Carrito.create({
+        producto_id: id,
+        usuario_id: 28, // 🔸 temporal, hasta conectar el login
         quantity: 1
       });
+      res.redirect("/cart");
+    } catch (error) {
+      console.error("Error al agregar al carrito:", error);
+      res.status(500).send("Error al agregar al carrito.");
     }
-
-    res.redirect('/cart');
   },
 
-  // Ver carrito
-  showCart: (req, res) => {
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    res.render('products/cart', { cart, total });
-  },
+  // Eliminar solo una unidad
+  removeOne: async (req, res) => {
+    try {
+      const itemId = req.params.id;
+      const item = await db.Carrito.findByPk(itemId);
 
-  // Eliminar un producto
-  removeItem: (req, res) => {
-    const { id } = req.params;
-    cart = cart.filter(item => item.id !== parseInt(id));
-    res.redirect('/cart');
-  },
+      if (!item) return res.status(404).send("Producto no encontrado.");
 
-  // Vaciar carrito (pagar o limpiar)
-  clearCart: (req, res) => {
-    cart = [];
-    res.redirect('/cart');
-  }
+      if (item.quantity > 1) {
+        item.quantity -= 1;
+        await item.save();
+      } else {
+        await item.destroy();
+      }
+
+      res.redirect("/cart");
+    } catch (error) {
+      console.error("Error al eliminar producto:", error);
+      res.status(500).send("Error al eliminar producto.");
+    }
+  },
 };
-
-module.exports = cartController;

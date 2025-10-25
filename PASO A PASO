@@ -11,3 +11,9 @@ npm install sequelize */
 ..PARA SABER LAS CARPERTAS QUE TENGO DENTRO DE MI PROYECTO 
 
 BSH ---  DIR
+
+git add .
+
+git commit -m ""
+
+git push -u origin main 
