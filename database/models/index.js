@@ -16,6 +16,8 @@ const sequelize = new Sequelize(
 const Game = require('./Game')(sequelize, DataTypes);
 const Usuario = require('./Usuario')(sequelize, DataTypes);
 const Carrito = require('./carrito')(sequelize, DataTypes);
+const Suscripcion = require('./Suscripcion')(sequelize, DataTypes);
+
 
 const db = {};
 db.sequelize = sequelize;
@@ -25,6 +27,8 @@ db.Sequelize = Sequelize;
 db.Game = Game;
 db.Usuario = Usuario;
 db.Carrito = Carrito;
+db.Suscripcion = Suscripcion;
+
 
 // Relaciones
 if (typeof Game.associate === 'function') Game.associate(db);

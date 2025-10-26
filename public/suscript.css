@@ -1,0 +1,22 @@
+    body {
+      background-image: url('/images/bg.jpg'); /* el mismo fondo que en carrito */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f8f7;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      background: rgb(84, 80, 80);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #fffb22;
+    }
+    p {
+      color: #555;
+    }

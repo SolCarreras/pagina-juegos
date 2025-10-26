@@ -42,6 +42,8 @@ const mainRouter = require('./routes/mainRoutes');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
 const cartRouter = require('./routes/cartRoutes');
+const suscripcionRoutes = require('./routes/suscripcion');
+
 
 
 
@@ -49,7 +51,7 @@ app.use("/", mainRouter);
 app.use("/user", userRouter);
 app.use("/product", productRouter);
 app.use('/cart', cartRouter);
-
+app.use('/suscribirse', suscripcionRoutes);
 
 /*En tu app.js (o en un archivo de sincronización) agregá este bloque para que cree la tabla automáticamente:
 const db = require('./database/models');
