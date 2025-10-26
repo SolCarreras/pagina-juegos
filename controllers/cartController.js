@@ -5,12 +5,12 @@ module.exports = {
  viewCart: async (req, res) => {
   try {
     const items = await db.Carrito.findAll({
-      include: [{ model: db.Game, as: "Games" }]
+      include: [{ model: db.Game, as: "game" }]
     });
 
     // Calcular total 💰
     const total = items.reduce((acc, item) => {
-      return acc + (item.Games?.price || 0) * item.quantity;
+      return acc + (item.game?.price || 0) * item.quantity;
     }, 0);
 
     res.render("cart", { title: "Tu carrito", cart: items, total });

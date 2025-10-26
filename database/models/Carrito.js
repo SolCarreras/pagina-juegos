@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     });
     Carrito.belongsTo(models.Game, {
       foreignKey: "producto_id",
-      as: "Games"
+      as: "game"
     });
   };
 
